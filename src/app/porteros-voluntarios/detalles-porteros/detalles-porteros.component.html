@@ -1,0 +1,17 @@
+<!-- Esta clase nos mostrará los detalles de cada portero, poniendo una lista hecha con clases
+  de bootstrap-->
+
+<div class="card text-center" *ngIf="portero"> <!-- Nos permite mostrar los elementos de la interfaz portero-->
+  <div class="card-body">
+    <h3 class="card-header">{{ portero.data.nombre }} - {{ portero.data.apellidos }}</h3>
+      <ul class="list-group list-group-horizontal">
+          <li class="list-group-item"> {{ portero.data.correo }}</li>
+          <li class="list-group-item">{{ portero.data.ciudad }}</li>
+          <li class="list-group-item">{{ portero.data.mes }}</li>
+          <li class="list-group-item">{{ portero.data.telefono }}</li>
+      </ul>
+      <a routerLink="/edit/{{ portero.id }}" class="btn btn-success"></a>
+      <!-- Botón que nos dirige al apartado de editar poniendo el routerLink correcto ya definido
+      en las rutas-->
+  </div>
+</div>

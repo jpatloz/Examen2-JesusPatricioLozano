@@ -1,0 +1,27 @@
+<form [formGroup]="datosPortero" class="form-group container w-50 mt-3">
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="nombre" placeholder="Nombre" formControlName="nombre" />
+    <label for="nombre">Nombre</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" formControlName="apellidos" />
+    <label for="apellidos">Apellidos</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="ciudad" placeholder="Ciudad" formControlName="ciudad" />
+    <label for="ciudad">Ciudad</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="correo" placeholder="Correo" formControlName="correo" />
+    <label for="correo">Correo</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="mes" placeholder="Mes" formControlName="mes"/>
+    <label for="mes">Mes</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="telefono" placeholder="Telefono" formControlName="telefono" />
+    <label for="telefono">Telefono</label>
+  </div>
+  <button class="btn btn-primary" (click)="guardar()" [disabled]="!datosPortero.valid">Guardar</button>
+</form>

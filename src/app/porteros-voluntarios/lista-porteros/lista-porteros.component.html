@@ -1,0 +1,16 @@
+<!-- Lista que muestra los porteros -->
+
+<div class="container w-50 mt-3">
+  <h2 class="card text-center">Listado de porteros</h2>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item list-group-item-primary" *ngFor="let portero of listadoPorteros">
+      <a (click)="seleccionarPortero(portero)" class="list-group-item-action">
+        {{ portero.data.nombre }} - {{ portero.data.apellidos }}
+      </a>
+    </li>
+  </ul>
+</div>
+
+<app-detalles-porteros [portero]="porteroSeleccionado" ></app-detalles-porteros>
+
+<!-- La clase portero seleccionado se usa para que, al pinchar en cada uno, nos muestre sus detalles-->
