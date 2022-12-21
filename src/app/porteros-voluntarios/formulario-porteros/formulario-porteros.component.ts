@@ -12,6 +12,7 @@ export class FormularioPorterosComponent implements OnInit {
 
   //Creamos el formulario con FormBuilder
   datosPortero = this.form.group({
+    id: ['', Validators.required],
     nombre: ['', Validators.required],
     apellidos: ['', Validators.required],
     ciudad: ['', Validators.required],
@@ -50,15 +51,17 @@ export class FormularioPorterosComponent implements OnInit {
 
   guardar() {
     if(this.nuevo){
+
       // guardamos datos con crearPortero
       this.porterosService.crearPortero(this.datosPortero.value).then(
         () => {
-          alert('Mascota creada, enhorabuena');
+          alert('Portero creada, enhorabuena');
         }, (error: any) => {
           alert("Error: " + error);
         }
       )
     }else{
+
       // llamamos a actualizarPortero
       this.porterosService.actualizarPortero(this.documentId, this.datosPortero.value).then(
         () => {

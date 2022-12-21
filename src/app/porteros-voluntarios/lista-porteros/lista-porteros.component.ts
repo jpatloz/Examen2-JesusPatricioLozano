@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Portero } from '../../interfaz/portero';
 import { ServicioPorterosService } from '../../servicios/servicio-porteros.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-lista-porteros',
@@ -14,6 +15,7 @@ export class ListaPorterosComponent implements OnInit {
 
   constructor(
     private porteroService: ServicioPorterosService, //Llamamos al servicio de porteros
+    private firebase: AngularFirestore
   ) { }
 
   ngOnInit(): void {
